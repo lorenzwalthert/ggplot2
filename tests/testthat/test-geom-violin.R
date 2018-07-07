@@ -40,7 +40,7 @@ test_that("quantiles do not fail on zero-range data", {
 test_that("geom_violin draws correctly", {
   set.seed(111)
   dat <- data.frame(x = LETTERS[1:3], y = rnorm(90))
-  dat <- dat[dat$x != "C" | c(T, F), ]  # Keep half the C's
+  dat <- dat[dat$x != "C" | c(T, F), ] # Keep half the C's
 
   expect_doppelganger("basic",
     ggplot(dat, aes(x = x, y = y)) + geom_violin()

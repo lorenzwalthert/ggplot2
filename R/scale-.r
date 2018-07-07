@@ -581,7 +581,7 @@ continuous_scale <- function(aesthetics, scale_name, palette, name = waiver(),
     trans = trans,
     na.value = na.value,
     expand = expand,
-    rescaler = rescaler,  # Used by diverging and n colour gradients
+    rescaler = rescaler, # Used by diverging and n colour gradients
     oob = oob,
 
     name = name,

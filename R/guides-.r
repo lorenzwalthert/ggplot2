@@ -235,8 +235,8 @@ guides_gengrob <- function(gdefs, theme) {
 # build up all guide boxes into one guide-boxes.
 guides_build <- function(ggrobs, theme) {
   theme$legend.spacing <- theme$legend.spacing %||% unit(0.5, "lines")
-  theme$legend.spacing.y <- theme$legend.spacing.y  %||% theme$legend.spacing
-  theme$legend.spacing.x <- theme$legend.spacing.x  %||% theme$legend.spacing
+  theme$legend.spacing.y <- theme$legend.spacing.y %||% theme$legend.spacing
+  theme$legend.spacing.x <- theme$legend.spacing.x %||% theme$legend.spacing
 
   widths <- do.call("unit.c", lapply(ggrobs, function(g) sum(g$widths)))
   heights <- do.call("unit.c", lapply(ggrobs, function(g) sum(g$heights)))

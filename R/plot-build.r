@@ -174,7 +174,7 @@ ggplot_gtable.ggplot_built <- function(data) {
     position <- "none"
   } else {
     # these are a bad hack, since it modifies the contents of viewpoint directly...
-    legend_width  <- gtable_width(legend_box)
+    legend_width <- gtable_width(legend_box)
     legend_height <- gtable_height(legend_box)
 
     # Set the justification of the legend box
@@ -202,7 +202,7 @@ ggplot_gtable.ggplot_built <- function(data) {
     }
   }
 
-  panel_dim <-  find_panel(plot_table)
+  panel_dim <- find_panel(plot_table)
   # for align-to-device, use this:
   # panel_dim <-  summarise(plot_table$layout, t = min(t), r = max(r), b = max(b), l = min(l))
 

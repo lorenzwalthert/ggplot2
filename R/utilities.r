@@ -276,7 +276,7 @@ gg_dep <- function(version, msg) {
   # If current major number is greater than last-good major number, or if
   #  current minor number is more than 1 greater than last-good minor number,
   #  give error.
-  if (cv[[1, 1]] > v[[1, 1]]  ||  cv[[1, 2]] > v[[1, 2]] + 1) {
+  if (cv[[1, 1]] > v[[1, 1]] || cv[[1, 2]] > v[[1, 2]] + 1) {
     stop(msg, " (Defunct; last used in version ", version, ")",
       call. = FALSE)
 

@@ -272,7 +272,7 @@ FacetGrid <- ggproto("FacetGrid", Facet,
 
       data <- plyr::unrowname(data[data_rep, , drop = FALSE])
       facet_vals <- plyr::unrowname(cbind(
-        facet_vals[data_rep, ,  drop = FALSE],
+        facet_vals[data_rep, , drop = FALSE],
         to_add[facet_rep, , drop = FALSE]))
     }
 

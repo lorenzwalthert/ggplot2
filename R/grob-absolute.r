@@ -24,7 +24,7 @@ grobHeight.absoluteGrob <- function(x) {
 #' @export
 #' @method grobWidth absoluteGrob
 grobWidth.absoluteGrob <- function(x) {
-  x$width %||%  grobWidth(x$children)
+  x$width %||% grobWidth(x$children)
 }
 
 #' @export

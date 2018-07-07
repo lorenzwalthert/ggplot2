@@ -1,7 +1,7 @@
 context("coord_trans")
 
 test_that("warnings are generated when cord_trans() results in new infinite values", {
-  p  <- ggplot(head(diamonds, 20)) +
+  p <- ggplot(head(diamonds, 20)) +
     geom_bar(aes(x = cut)) +
     coord_trans(y = "log10")
 

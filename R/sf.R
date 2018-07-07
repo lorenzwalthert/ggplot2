@@ -181,7 +181,7 @@ default_aesthetics <- function(type) {
     GeomPoint$default_aes
   } else if (type == "line") {
     GeomLine$default_aes
-  } else  {
+  } else {
     utils::modifyList(GeomPolygon$default_aes, list(fill = "grey90", colour = "grey35"))
   }
 }

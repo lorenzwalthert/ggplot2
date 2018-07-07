@@ -109,7 +109,7 @@ CoordPolar <- ggproto("CoordPolar", Coord,
         if (self$theta == n) {
           expand <- expand_default(scale, c(0, 0.5), c(0, 0))
         } else {
-          expand <- expand_default(scale, c(0, 0),   c(0, 0))
+          expand <- expand_default(scale, c(0, 0), c(0, 0))
         }
         range <- scale$dimension(expand)
       } else {
@@ -154,7 +154,7 @@ CoordPolar <- ggproto("CoordPolar", Coord,
   transform = function(self, data, panel_params) {
     data <- rename_data(self, data)
 
-    data$r  <- r_rescale(self, data$r, panel_params)
+    data$r <- r_rescale(self, data$r, panel_params)
     data$theta <- theta_rescale(self, data$theta, panel_params)
     data$x <- data$r * sin(data$theta) + 0.5
     data$y <- data$r * cos(data$theta) + 0.5

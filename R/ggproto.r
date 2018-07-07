@@ -171,7 +171,7 @@ make_proto_method <- function(self, f) {
   args <- formals(f)
   # is.null is a fast path for a common case; the %in% check is slower but also
   # catches the case where there's a `self = NULL` argument.
-  has_self  <- !is.null(args[["self"]]) || "self"  %in% names(args)
+  has_self <- !is.null(args[["self"]]) || "self" %in% names(args)
 
   if (has_self) {
     fun <- function(...) f(..., self = self)
@@ -246,7 +246,7 @@ print.ggproto <- function(x, ..., flat = TRUE) {
 
 #' @export
 #' @rdname print.ggproto
-format.ggproto <-  function(x, ..., flat = TRUE) {
+format.ggproto <- function(x, ..., flat = TRUE) {
   classes_str <- function(obj) {
     classes <- setdiff(class(obj), "ggproto")
     if (length(classes) == 0)

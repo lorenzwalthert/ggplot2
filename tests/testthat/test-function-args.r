@@ -21,7 +21,7 @@ test_that("geom_xxx and GeomXxx$draw arg defaults match", {
   # GeomXxx$draw_groups functions, make sure that if they have same args, that
   # the args have the same default values.
   lapply(geom_fun_names, function(geom_fun_name) {
-    geom_fun    <- ggplot2_ns[[geom_fun_name]]
+    geom_fun <- ggplot2_ns[[geom_fun_name]]
     geom <- geom_fun()$geom
     if (!inherits(geom, "Geom")) # for geoms that return more than one thing
       return()

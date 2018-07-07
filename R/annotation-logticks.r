@@ -142,7 +142,7 @@ GeomLogticks <- ggproto("GeomLogticks", Geom,
       if (scaled)
         xticks$value <- log(xticks$value, base)
 
-      names(xticks)[names(xticks) == "value"] <- "x"   # Rename to 'x' for coordinates$transform
+      names(xticks)[names(xticks) == "value"] <- "x" # Rename to 'x' for coordinates$transform
       xticks <- coord$transform(xticks, panel_params)
 
       # Make the grobs
@@ -177,7 +177,7 @@ GeomLogticks <- ggproto("GeomLogticks", Geom,
       if (scaled)
         yticks$value <- log(yticks$value, base)
 
-      names(yticks)[names(yticks) == "value"] <- "y"   # Rename to 'y' for coordinates$transform
+      names(yticks)[names(yticks) == "value"] <- "y" # Rename to 'y' for coordinates$transform
       yticks <- coord$transform(yticks, panel_params)
 
       # Make the grobs
@@ -216,13 +216,13 @@ calc_logticks <- function(base = 10, ticks_per_base = base - 1,
   reps <- maxpow - minpow
 
   # For base 10: 1, 2, 3, ..., 7, 8, 9, 1, 2, ...
-  ticknums  <- rep(seq(1, base - 1, length.out = ticks_per_base), reps)
+  ticknums <- rep(seq(1, base - 1, length.out = ticks_per_base), reps)
 
   # For base 10: 1, 1, 1, ..., 1, 1, 1, 2, 2, ... (for example)
   powers <- rep(seq(minpow, maxpow - 1), each = ticks_per_base)
 
-  ticks  <- ticknums * base^powers
-  ticks  <- c(ticks, base^maxpow)  # Add the last tick mark
+  ticks <- ticknums * base^powers
+  ticks <- c(ticks, base^maxpow) # Add the last tick mark
 
   # Set all of the ticks short
   tickend <- rep(shortend, length(ticks))

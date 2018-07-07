@@ -128,7 +128,7 @@ Facet <- ggproto("Facet", NULL,
     stop("Not implemented", call. = FALSE)
   },
   draw_labels = function(panels, layout, x_scales, y_scales, ranges, coord, data, theme, labels, params) {
-    panel_dim <-  find_panel(panels)
+    panel_dim <- find_panel(panels)
 
     xlab_height_top <- grobHeight(labels$x[[1]])
     panels <- gtable_add_rows(panels, xlab_height_top, pos = 0)
@@ -140,7 +140,7 @@ Facet <- ggproto("Facet", NULL,
     panels <- gtable_add_grob(panels, labels$x[[2]], name = "xlab-b",
       l = panel_dim$l, r = panel_dim$r, t = -1, clip = "off")
 
-    panel_dim <-  find_panel(panels)
+    panel_dim <- find_panel(panels)
 
     ylab_width_left <- grobWidth(labels$y[[1]])
     panels <- gtable_add_cols(panels, ylab_width_left, pos = 0)

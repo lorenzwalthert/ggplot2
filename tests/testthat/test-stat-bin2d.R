@@ -15,8 +15,8 @@ test_that("binwidth is respected", {
 test_that("breaks override binwidth", {
   # Test explicitly setting the breaks for x, overriding
   # the binwidth.
-  integer_breaks <- (0:4) - 0.5  # Will use for x
-  half_breaks <- seq(0, 3.5, 0.5)  # Will test against this for y
+  integer_breaks <- (0:4) - 0.5 # Will use for x
+  half_breaks <- seq(0, 3.5, 0.5) # Will test against this for y
 
   df <- data.frame(x = 0:3, y = 0:3)
   base <- ggplot(df, aes(x, y)) +

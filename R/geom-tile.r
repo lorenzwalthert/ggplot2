@@ -88,7 +88,7 @@ GeomTile <- ggproto("GeomTile", GeomRect,
     data$height <- data$height %||% params$height %||% resolution(data$y, FALSE)
 
     transform(data,
-      xmin = x - width / 2,  xmax = x + width / 2,  width = NULL,
+      xmin = x - width / 2, xmax = x + width / 2, width = NULL,
       ymin = y - height / 2, ymax = y + height / 2, height = NULL
     )
   },

@@ -48,7 +48,7 @@ test_that("insufficient values raise an error", {
 
 test_that("values are matched when scale contains more unique values than are in the data", {
   s <- scale_colour_manual(values = c("8" = "c", "4" = "a",
-    "22" = "d", "6"  = "b"))
+    "22" = "d", "6" = "b"))
   s$train(c("4", "6", "8"))
   expect_equal(s$map(c("4", "6", "8")), c("a", "b", "c"))
 })
