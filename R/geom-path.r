@@ -162,7 +162,7 @@ GeomPath <- ggproto("GeomPath", Geom,
       linetype <- unique(df$linetype)
       data.frame(
         solid = identical(linetype, 1) || identical(linetype, "solid"),
-        constant = nrow(unique(df[, c("alpha", "colour","size", "linetype")])) == 1
+        constant = nrow(unique(df[, c("alpha", "colour", "size", "linetype")])) == 1
       )
     })
     solid_lines <- all(attr$solid)
@@ -301,7 +301,7 @@ GeomStep <- ggproto("GeomStep", GeomPath,
 # Used by [geom_step()]
 #
 # @keyword internal
-stairstep <- function(data, direction="hv") {
+stairstep <- function(data, direction = "hv") {
   direction <- match.arg(direction, c("hv", "vh"))
   data <- as.data.frame(data)[order(data$x), ]
   n <- nrow(data)
@@ -312,10 +312,10 @@ stairstep <- function(data, direction="hv") {
   }
 
   if (direction == "vh") {
-    xs <- rep(1:n, each = 2)[-2*n]
+    xs <- rep(1:n, each = 2)[-2 * n]
     ys <- c(1, rep(2:n, each = 2))
   } else {
-    ys <- rep(1:n, each = 2)[-2*n]
+    ys <- rep(1:n, each = 2)[-2 * n]
     xs <- c(1, rep(2:n, each = 2))
   }
 

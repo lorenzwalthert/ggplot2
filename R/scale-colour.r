@@ -4,7 +4,7 @@
 #' `ggplot2.continuous.colour` and `ggplot2.continuous.fill` options. If these
 #' options are not present, `"gradient"` will be used. See [options()] for more
 #' information.
-#' 
+#'
 #' @param ... Additional parameters passed on to the scale type
 #' @param type One of "gradient" (the default) or "viridis" indicating the
 #'   colour scale to use
@@ -16,10 +16,10 @@
 #' v <- ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 #' geom_tile()
 #' v
-#' 
+#'
 #' v + scale_fill_continuous(type = "gradient")
 #' v + scale_fill_continuous(type = "viridis")
-#' 
+#'
 #' # The above are equivalent to
 #' v + scale_fill_gradient()
 #' v + scale_fill_viridis_c()

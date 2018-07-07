@@ -13,6 +13,6 @@ test_that("viridis scale changes point color", {
 
 test_that("viridis scale is used by default for ordered factors", {
   p <- ggplot(df, aes(x, y, colour = tier)) + geom_point()
-  
+
   expect_equal(layer_data(p)$colour, "#440154FF")
 })

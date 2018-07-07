@@ -95,28 +95,28 @@ test_that("guides are positioned correctly", {
     p1 + theme(legend.position = "top")
   )
   expect_doppelganger("facet_grid, legend on left",
-    p1 + facet_grid(x~y) + theme(legend.position = "left")
+    p1 + facet_grid(x ~ y) + theme(legend.position = "left")
   )
   expect_doppelganger("facet_grid, legend on bottom",
-    p1 + facet_grid(x~y) + theme(legend.position = "bottom")
+    p1 + facet_grid(x ~ y) + theme(legend.position = "bottom")
   )
   expect_doppelganger("facet_grid, legend on right",
-    p1 + facet_grid(x~y) + theme(legend.position = "right")
+    p1 + facet_grid(x ~ y) + theme(legend.position = "right")
   )
   expect_doppelganger("facet_grid, legend on top",
-    p1 + facet_grid(x~y) + theme(legend.position = "top")
+    p1 + facet_grid(x ~ y) + theme(legend.position = "top")
   )
   expect_doppelganger("facet_wrap, legend on left",
-    p1 + facet_wrap(~ x) + theme(legend.position = "left")
+    p1 + facet_wrap(~x) + theme(legend.position = "left")
   )
   expect_doppelganger("facet_wrap, legend on bottom",
-    p1 + facet_wrap(~ x) + theme(legend.position = "bottom")
+    p1 + facet_wrap(~x) + theme(legend.position = "bottom")
   )
   expect_doppelganger("facet_wrap, legend on right",
-    p1 + facet_wrap(~ x) + theme(legend.position = "right")
+    p1 + facet_wrap(~x) + theme(legend.position = "right")
   )
   expect_doppelganger("facet_wrap, legend on top",
-    p1 + facet_wrap(~ x) + theme(legend.position = "top")
+    p1 + facet_wrap(~x) + theme(legend.position = "top")
   )
 
   # padding
@@ -134,13 +134,13 @@ test_that("guides are positioned correctly", {
     p2 + theme(legend.position = c(.5, .5))
   )
   expect_doppelganger("legend inside plot, bottom left",
-    p2 + theme(legend.justification = c(0,0), legend.position = c(0,0))
+    p2 + theme(legend.justification = c(0, 0), legend.position = c(0, 0))
   )
   expect_doppelganger("legend inside plot, top right",
-    p2 + theme(legend.justification = c(1,1), legend.position = c(1,1))
+    p2 + theme(legend.justification = c(1, 1), legend.position = c(1, 1))
   )
   expect_doppelganger("legend inside plot, bottom left of legend at center",
-    p2 + theme(legend.justification = c(0,0), legend.position = c(.5,.5))
+    p2 + theme(legend.justification = c(0, 0), legend.position = c(.5, .5))
   )
 })
 
@@ -191,7 +191,7 @@ test_that("guides title and text are positioned correctly", {
       name = "value",
       guide = guide_colorbar(
         title.theme = element_text(size = 11, angle = 0, hjust = 0.5, vjust = 1),
-        label.theme = element_text(size = 0.8*11, angle = 270, hjust = 0.5, vjust = 1),
+        label.theme = element_text(size = 0.8 * 11, angle = 270, hjust = 0.5, vjust = 1),
         order = 2 # set guide order to keep visual test stable
       )
     ) +
@@ -205,12 +205,12 @@ test_that("guides title and text are positioned correctly", {
         title.position = "top",
         label.position = "bottom",
         title.theme = element_text(size = 11, angle = 180, hjust = 0, vjust = 1),
-        label.theme = element_text(size = 0.8*11, angle = 90, hjust = 1, vjust = 0.5),
+        label.theme = element_text(size = 0.8 * 11, angle = 90, hjust = 1, vjust = 0.5),
         order = 1
       )
     )
 
-  expect_doppelganger("rotated guide titles and labels", p )
+  expect_doppelganger("rotated guide titles and labels", p)
 })
 
 test_that("colorbar can be styled", {

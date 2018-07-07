@@ -66,7 +66,7 @@ StatBindot <- ggproto("StatBindot", Stat,
                            right = TRUE) {
 
     # This function taken from integer help page
-    is.wholenumber <- function(x, tol = .Machine$double.eps ^ 0.5) {
+    is.wholenumber <- function(x, tol = .Machine$double.eps^0.5) {
       abs(x - round(x)) < tol
     }
 
@@ -137,10 +137,10 @@ StatBindot <- ggproto("StatBindot", Stat,
 densitybin <- function(x, weight = NULL, binwidth = NULL, method = method, range = NULL) {
 
     if (length(stats::na.omit(x)) == 0) return(data.frame())
-    if (is.null(weight))  weight <- rep(1, length(x))
+    if (is.null(weight)) weight <- rep(1, length(x))
     weight[is.na(weight)] <- 0
 
-    if (is.null(range))    range <- range(x, na.rm = TRUE, finite = TRUE)
+    if (is.null(range)) range <- range(x, na.rm = TRUE, finite = TRUE)
     if (is.null(binwidth)) binwidth <- diff(range) / 30
 
     # Sort weight and x, by x

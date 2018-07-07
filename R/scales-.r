@@ -119,5 +119,3 @@ scales_add_missing <- function(plot, aesthetics, env) {
     plot$scales$add(scale_f())
   }
 }
-
-

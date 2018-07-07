@@ -128,7 +128,7 @@ guide_colourbar <- function(
   ticks = TRUE,
   ticks.colour = "white",
   ticks.linewidth = 0.5,
-  draw.ulim= TRUE,
+  draw.ulim = TRUE,
   draw.llim = TRUE,
 
   # general
@@ -282,17 +282,17 @@ guide_gengrob.colorbar <- function(guide, theme) {
   # make the bar grob (`grob.bar`)
   if (guide$raster) {
     image <- switch(guide$direction, horizontal = t(guide$bar$colour), vertical = rev(guide$bar$colour))
-    grob.bar <-rasterGrob(image = image, width = barwidth, height = barheight, default.units = "cm", gp = gpar(col = NA), interpolate = TRUE)
+    grob.bar <- rasterGrob(image = image, width = barwidth, height = barheight, default.units = "cm", gp = gpar(col = NA), interpolate = TRUE)
   } else {
     if (guide$direction == "horizontal") {
       bw <- barwidth / nrow(guide$bar)
       bx <- (seq(nrow(guide$bar)) - 1) * bw
-      grob.bar <-rectGrob(x = bx, y = 0, vjust = 0, hjust = 0, width = bw, height = barheight, default.units = "cm",
+      grob.bar <- rectGrob(x = bx, y = 0, vjust = 0, hjust = 0, width = bw, height = barheight, default.units = "cm",
                           gp = gpar(col = NA, fill = guide$bar$colour))
     } else { # guide$direction == "vertical"
       bh <- barheight / nrow(guide$bar)
       by <- (seq(nrow(guide$bar)) - 1) * bh
-      grob.bar <-rectGrob(x = 0, y = by, vjust = 0, hjust = 0, width = barwidth, height = bh, default.units = "cm",
+      grob.bar <- rectGrob(x = 0, y = by, vjust = 0, hjust = 0, width = barwidth, height = bh, default.units = "cm",
                           gp = gpar(col = NA, fill = guide$bar$colour))
     }
   }
@@ -417,17 +417,17 @@ guide_gengrob.colorbar <- function(guide, theme) {
 
   # make the ticks grob (`grob.ticks`)
   if (!guide$ticks)
-    grob.ticks <-zeroGrob()
+    grob.ticks <- zeroGrob()
   else {
     if (guide$direction == "horizontal") {
       x0 <- rep(tick_pos, 2)
-      y0 <- c(rep(0, nbreak), rep(barheight * (4/5), nbreak))
+      y0 <- c(rep(0, nbreak), rep(barheight * (4 / 5), nbreak))
       x1 <- rep(tick_pos, 2)
-      y1 <- c(rep(barheight * (1/5), nbreak), rep(barheight, nbreak))
+      y1 <- c(rep(barheight * (1 / 5), nbreak), rep(barheight, nbreak))
     } else { # guide$direction == "vertical"
-      x0 <- c(rep(0, nbreak), rep(barwidth * (4/5), nbreak))
+      x0 <- c(rep(0, nbreak), rep(barwidth * (4 / 5), nbreak))
       y0 <- rep(tick_pos, 2)
-      x1 <- c(rep(barwidth * (1/5), nbreak), rep(barwidth, nbreak))
+      x1 <- c(rep(barwidth * (1 / 5), nbreak), rep(barwidth, nbreak))
       y1 <- rep(tick_pos, 2)
     }
     grob.ticks <- segmentsGrob(
@@ -568,4 +568,3 @@ label_just_defaults.colorbar <- function(direction, position) {
     )
   }
 }
-

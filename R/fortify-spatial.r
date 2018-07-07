@@ -25,7 +25,7 @@ fortify.SpatialPolygonsDataFrame <- function(model, data, region = NULL, ...) {
   attr <- as.data.frame(model)
   # If not specified, split into regions based on polygons
   if (is.null(region)) {
-    coords <- plyr::ldply(model@polygons,fortify)
+    coords <- plyr::ldply(model@polygons, fortify)
     message("Regions defined for each Polygons")
   } else {
     cp <- sp::polygons(model)

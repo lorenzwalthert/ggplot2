@@ -9,7 +9,7 @@ test_that("as_facets_list() coerces formulas", {
   exp <- list(quos(foo = foo, bar = bar), quos(baz = baz, bam = bam))
   expect_identical(as_facets_list(foo + bar ~ baz + bam), exp)
 
-  exp <- list(quos(`foo()`= foo(), `bar()` = bar()), quos(`baz()` = baz(), `bam()` = bam()))
+  exp <- list(quos(`foo()` = foo(), `bar()` = bar()), quos(`baz()` = baz(), `bam()` = bam()))
   expect_identical(as_facets_list(foo() + bar() ~ baz() + bam()), exp)
 })
 
@@ -149,7 +149,7 @@ test_that("shrink parameter affects scaling", {
 
 test_that("facet variables", {
   expect_identical(facet_null()$vars(), character(0))
-  expect_identical(facet_wrap(~ a)$vars(), "a")
+  expect_identical(facet_wrap(~a)$vars(), "a")
   expect_identical(facet_grid(a ~ b)$vars(), c("a", "b"))
 })
 

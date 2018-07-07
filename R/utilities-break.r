@@ -30,7 +30,7 @@ cut_number <- function(x, n = NULL, ...) {
   brk <- breaks(x, "n", n)
   if (anyDuplicated(brk))
     stop("Insufficient data values to produce ", n, " bins.", call. = FALSE)
-  cut(x, brk , include.lowest = TRUE, ...)
+  cut(x, brk, include.lowest = TRUE, ...)
 }
 
 #' @export
@@ -112,4 +112,3 @@ breaks <- function(x, equal, nbins = NULL, binwidth = NULL) {
   }
 
 }
-

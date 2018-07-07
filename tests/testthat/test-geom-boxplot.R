@@ -2,8 +2,8 @@ context("geom_boxplot")
 
 # thanks wch for providing the test code
 test_that("geom_boxplot range includes all outliers", {
-  dat <- data.frame(x = 1, y = c(-(1:20) ^ 3, (1:20) ^ 3) )
-  p <- ggplot_build(ggplot(dat, aes(x,y)) + geom_boxplot())
+  dat <- data.frame(x = 1, y = c(-(1:20)^3, (1:20)^3))
+  p <- ggplot_build(ggplot(dat, aes(x, y)) + geom_boxplot())
 
   miny <- p$layout$panel_params[[1]]$y.range[1]
   maxy <- p$layout$panel_params[[1]]$y.range[2]
@@ -13,7 +13,7 @@ test_that("geom_boxplot range includes all outliers", {
 })
 
 test_that("geom_boxplot for continuous x gives warning if more than one x (#992)", {
-  dat <- expand.grid(x = 1:2, y = c(-(1:5) ^ 3, (1:5) ^ 3) )
+  dat <- expand.grid(x = 1:2, y = c(-(1:5)^3, (1:5)^3))
 
   bplot <- function(aes = NULL, extra = list()) {
     ggplot_build(ggplot(dat, aes) + geom_boxplot(aes) + extra)
@@ -43,7 +43,7 @@ test_that("boxes with variable widths do not overlap", {
     geom_boxplot(aes(colour = Sepal.Width < 3.2), varwidth = TRUE)
   d <- layer_data(p)[c("xmin", "xmax")]
   xid <- find_x_overlaps(d)
-  
+
   expect_false(any(duplicated(xid)))
 })
 

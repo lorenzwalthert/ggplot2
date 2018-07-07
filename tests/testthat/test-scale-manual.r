@@ -1,13 +1,13 @@
 context("scale_manual")
 
 test_that("names of values used in manual scales", {
-   s <- scale_colour_manual(values = c("8" = "c","4" = "a","6" = "b"))
+   s <- scale_colour_manual(values = c("8" = "c", "4" = "a", "6" = "b"))
    s$train(c("4", "6", "8"))
    expect_equal(s$map(c("4", "6", "8")), c("a", "b", "c"))
 })
 
 
-dat <- data.frame(g = c("B","A","A"))
+dat <- data.frame(g = c("B", "A", "A"))
 p <- ggplot(dat, aes(g, fill = g)) + geom_bar()
 col <- c("A" = "red", "B" = "green", "C" = "blue")
 

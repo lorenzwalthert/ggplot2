@@ -69,4 +69,3 @@ annotate <- function(geom, x = NULL, y = NULL, xmin = NULL, xmax = NULL,
     show.legend = FALSE
   )
 }
-

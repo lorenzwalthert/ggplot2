@@ -84,4 +84,3 @@ StatEcdf <- ggproto("StatEcdf", Stat,
 
   required_aes = c("x")
 )
-

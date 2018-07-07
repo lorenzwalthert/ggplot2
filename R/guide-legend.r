@@ -122,7 +122,7 @@
 #' # reversed order legend
 #' p + guides(col = guide_legend(reverse = TRUE))
 #' }
-guide_legend <- function(# title
+guide_legend <- function( # title
                          title = waiver(),
                          title.position = NULL,
                          title.theme = NULL,

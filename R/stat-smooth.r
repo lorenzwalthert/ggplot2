@@ -99,7 +99,7 @@ StatSmooth <- ggproto("StatSmooth", Stat,
     params
   },
 
-  compute_group = function(data, scales, method = "auto", formula = y~x,
+  compute_group = function(data, scales, method = "auto", formula = y ~ x,
                            se = TRUE, n = 80, span = 0.75, fullrange = FALSE,
                            xseq = NULL, level = 0.95, method.args = list(),
                            na.rm = FALSE) {

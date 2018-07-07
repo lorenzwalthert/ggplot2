@@ -128,7 +128,7 @@ StatBin <- ggproto("StatBin", Stat,
                            width = NULL) {
 
     if (!is.null(breaks)) {
-      if (!scales$x$is_discrete()){
+      if (!scales$x$is_discrete()) {
          breaks <- scales$x$transform(breaks)
       }
       bins <- bin_breaks(breaks, closed)
@@ -148,4 +148,3 @@ StatBin <- ggproto("StatBin", Stat,
   default_aes = aes(y = stat(count), weight = 1),
   required_aes = c("x")
 )
-

@@ -183,7 +183,7 @@ GeomDotplot <- ggproto("GeomDotplot", Geom,
 
     # Set up the stacking function and range
     if (is.null(params$stackdir) || params$stackdir == "up") {
-      stackdots <- function(a)  a - .5
+      stackdots <- function(a) a - .5
       stackaxismin <- 0
       stackaxismax <- 1
     } else if (params$stackdir == "down") {
@@ -191,11 +191,11 @@ GeomDotplot <- ggproto("GeomDotplot", Geom,
       stackaxismin <- -1
       stackaxismax <- 0
     } else if (params$stackdir == "center") {
-      stackdots <- function(a)  a - 1 - max(a - 1) / 2
+      stackdots <- function(a) a - 1 - max(a - 1) / 2
       stackaxismin <- -.5
       stackaxismax <- .5
     } else if (params$stackdir == "centerwhole") {
-      stackdots <- function(a)  a - 1 - floor(max(a - 1) / 2)
+      stackdots <- function(a) a - 1 - floor(max(a - 1) / 2)
       stackaxismin <- -.5
       stackaxismax <- .5
     }

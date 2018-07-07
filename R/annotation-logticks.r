@@ -221,8 +221,8 @@ calc_logticks <- function(base = 10, ticks_per_base = base - 1,
   # For base 10: 1, 1, 1, ..., 1, 1, 1, 2, 2, ... (for example)
   powers <- rep(seq(minpow, maxpow - 1), each = ticks_per_base)
 
-  ticks  <- ticknums * base ^ powers
-  ticks  <- c(ticks, base ^ maxpow)  # Add the last tick mark
+  ticks  <- ticknums * base^powers
+  ticks  <- c(ticks, base^maxpow)  # Add the last tick mark
 
   # Set all of the ticks short
   tickend <- rep(shortend, length(ticks))
@@ -235,7 +235,7 @@ calc_logticks <- function(base = 10, ticks_per_base = base - 1,
 
   # Where to place the longer tick marks that are between each base
   # For base 10, this will be at each 5
-  longtick_after_base <- floor(ticks_per_base/2)
+  longtick_after_base <- floor(ticks_per_base / 2)
   tickend[ cycleIdx == longtick_after_base ] <- midend
 
   tickdf <- data.frame(value = ticks, start = start, end = tickend)

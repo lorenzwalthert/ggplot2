@@ -66,7 +66,7 @@ StatYdensity <- ggproto("StatYdensity", Stat,
     range <- range(data$y, na.rm = TRUE)
     modifier <- if (trim) 0 else 3
     bw <- calc_bw(data$y, bw)
-    dens <- compute_density(data$y, data$w, from = range[1] - modifier*bw, to = range[2] + modifier*bw,
+    dens <- compute_density(data$y, data$w, from = range[1] - modifier * bw, to = range[2] + modifier * bw,
       bw = bw, adjust = adjust, kernel = kernel)
 
     dens$y <- dens$x

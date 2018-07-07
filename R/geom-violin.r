@@ -126,7 +126,7 @@ GeomViolin <- ggproto("GeomViolin", Geom,
 
     # Close the polygon: set first and last point the same
     # Needed for coord_polar and such
-    newdata <- rbind(newdata, newdata[1,])
+    newdata <- rbind(newdata, newdata[1, ])
 
     # Draw quantiles if requested, so long as there is non-zero y range
     if (length(draw_quantiles) > 0 & !scales::zero_range(range(data$y))) {
@@ -177,4 +177,3 @@ create_quantile_segment_frame <- function(data, draw_quantiles) {
     group = rep(ys, each = 2)
   )
 }
-

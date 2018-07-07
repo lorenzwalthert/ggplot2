@@ -54,6 +54,6 @@ scale_alpha_datetime <- function(..., range = c(0.1, 1)) {
 #' @rdname scale_alpha
 #' @export
 #' @usage NULL
-scale_alpha_date <- function(..., range = c(0.1, 1)){
+scale_alpha_date <- function(..., range = c(0.1, 1)) {
   datetime_scale("alpha", "date", palette = rescale_pal(range), ...)
 }

@@ -156,6 +156,6 @@ test_that("parsed labels are rendered correctly", {
     "parsed facet labels",
     ggplot(df, aes(x, y)) +
       labs(x = NULL, y = NULL) +
-      facet_wrap(~ f, labeller = label_parsed)
+      facet_wrap(~f, labeller = label_parsed)
   )
 })

@@ -7,7 +7,7 @@ test_that("aes() captures input expressions", {
 })
 
 test_that("aes_q() uses quoted calls and formulas", {
-  out <- aes_q(quote(mpg), ~ wt + 1)
+  out <- aes_q(quote(mpg), ~wt + 1)
   expect_identical(out$x, rlang::quo(mpg))
   expect_identical(out$y, rlang::quo(wt + 1))
 })

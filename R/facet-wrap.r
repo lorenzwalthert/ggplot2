@@ -253,7 +253,7 @@ FacetWrap <- ggproto("FacetWrap", Facet,
     empty_table <- matrix(list(zeroGrob()), nrow = nrow, ncol = ncol)
     panel_table <- empty_table
     panel_table[panel_pos] <- panels
-    empties <- apply(panel_table, c(1,2), function(x) is.zero(x[[1]]))
+    empties <- apply(panel_table, c(1, 2), function(x) is.zero(x[[1]]))
     panel_table <- gtable_matrix("layout", panel_table,
      widths = unit(rep(1, ncol), "null"),
      heights = unit(rep(aspect_ratio, nrow), "null"), respect = respect, clip = coord$clip, z = matrix(1, ncol = ncol, nrow = nrow))
@@ -274,8 +274,8 @@ FacetWrap <- ggproto("FacetWrap", Facet,
     axis_mat_y_right <- empty_table
     axis_mat_y_right[panel_pos] <- axes$y$right[layout$SCALE_Y]
     if (!params$free$x) {
-      axis_mat_x_top[-1,]<- list(zeroGrob())
-      axis_mat_x_bottom[-nrow,]<- list(zeroGrob())
+      axis_mat_x_top[-1, ] <- list(zeroGrob())
+      axis_mat_x_bottom[-nrow, ] <- list(zeroGrob())
     }
     if (!params$free$y) {
       axis_mat_y_left[, -1] <- list(zeroGrob())

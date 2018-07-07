@@ -7,7 +7,7 @@ test_that("geom_sf draws correctly", {
   skip_if_not_installed("sf")
   if (packageVersion("sf") < "0.5.3") skip("Need sf 0.5.3")
 
-  f <- system.file("gpkg/nc.gpkg", package="sf")
+  f <- system.file("gpkg/nc.gpkg", package = "sf")
   nc <- sf::read_sf(f)
 
   expect_doppelganger("North Carolina county boundaries",

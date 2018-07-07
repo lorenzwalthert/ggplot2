@@ -289,7 +289,7 @@ CoordSf <- ggproto("CoordSf", CoordCartesian,
       return(data)
 
     lapply(data, function(layer_data) {
-      if (! is_sf(layer_data)) {
+      if (!is_sf(layer_data)) {
         return(layer_data)
       }
 

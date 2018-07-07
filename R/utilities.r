@@ -36,8 +36,8 @@ check_required_aesthetics <- function(required, present, name) {
 #
 # @param list to concatenate
 # @keyword internal
-#X clist(list(a=1, b=2))
-#X clist(par()[1:5])
+# X clist(list(a=1, b=2))
+# X clist(par()[1:5])
 clist <- function(l) {
   paste(paste(names(l), l, sep = " = ", collapse = ", "), sep = "")
 }
@@ -48,7 +48,7 @@ try_require <- function(package, fun) {
     return(invisible())
   }
 
-  stop("Package `", package, "` required for `", fun , "`.\n",
+  stop("Package `", package, "` required for `", fun, "`.\n",
     "Please install and try again.", call. = FALSE)
 }
 
@@ -184,7 +184,7 @@ rescale01 <- function(x) {
 #' @noRd
 #' @keywords internal
 expand_range4 <- function(limits, expand) {
-   stopifnot(is.numeric(expand) && (length(expand) %in% c(2,4)))
+   stopifnot(is.numeric(expand) && (length(expand) %in% c(2, 4)))
    # If only two expansion constants are given (i.e. the old syntax),
    # reuse them to generate a four-element expansion vector
    if (length(expand) == 2) { expand <- c(expand, expand) }
@@ -276,17 +276,17 @@ gg_dep <- function(version, msg) {
   # If current major number is greater than last-good major number, or if
   #  current minor number is more than 1 greater than last-good minor number,
   #  give error.
-  if (cv[[1,1]] > v[[1,1]]  ||  cv[[1,2]] > v[[1,2]] + 1) {
+  if (cv[[1, 1]] > v[[1, 1]]  ||  cv[[1, 2]] > v[[1, 2]] + 1) {
     stop(msg, " (Defunct; last used in version ", version, ")",
       call. = FALSE)
 
   # If minor number differs by one, give warning
-  } else if (cv[[1,2]] > v[[1,2]]) {
+  } else if (cv[[1, 2]] > v[[1, 2]]) {
     warning(msg, " (Deprecated; last used in version ", version, ")",
       call. = FALSE)
 
   # If only subminor number is greater, give message
-  } else if (cv[[1,3]] > v[[1,3]]) {
+  } else if (cv[[1, 3]] > v[[1, 3]]) {
     message(msg, " (Deprecated; last used in version ", version, ")")
   }
 
@@ -317,7 +317,7 @@ snakeize <- function(x) {
 }
 
 firstUpper <- function(s) {
-  paste(toupper(substring(s, 1,1)), substring(s, 2), sep = "")
+  paste(toupper(substring(s, 1, 1)), substring(s, 2), sep = "")
 }
 
 snake_class <- function(x) {

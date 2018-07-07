@@ -276,8 +276,8 @@ justify_grobs <- function(grobs, x = NULL, y = NULL, hjust = 0.5, vjust = 0.5,
 
 
   if (isTRUE(debug)) {
-    #cat("x, y:", c(x, y), "\n")
-    #cat("E - hjust, vjust:", c(hjust, vjust), "\n")
+    # cat("x, y:", c(x, y), "\n")
+    # cat("E - hjust, vjust:", c(hjust, vjust), "\n")
     grobTree(
       result_grob,
       pointsGrob(x, y, pch = 20, gp = gpar(col = "mediumturquoise"))
@@ -307,10 +307,10 @@ rotate_just <- function(angle, hjust, vjust) {
   ## For more details, see: https://github.com/tidyverse/ggplot2/issues/2653
 
   # # convert angle to radians
-  #rad <- (angle %||% 0) * pi / 180
+  # rad <- (angle %||% 0) * pi / 180
   #
-  #hnew <- cos(rad) * hjust - sin(rad) * vjust + (1 - cos(rad) + sin(rad)) / 2
-  #vnew <- sin(rad) * hjust + cos(rad) * vjust + (1 - cos(rad) - sin(rad)) / 2
+  # hnew <- cos(rad) * hjust - sin(rad) * vjust + (1 - cos(rad) + sin(rad)) / 2
+  # vnew <- sin(rad) * hjust + cos(rad) * vjust + (1 - cos(rad) - sin(rad)) / 2
 
   angle <- (angle %||% 0) %% 360
   if (0 <= angle & angle < 90) {

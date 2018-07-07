@@ -3,7 +3,7 @@ context("sec-axis")
 x <- exp(seq(log(0.001), log(1000), length.out = 100))
 foo <- data.frame(
   x = x,
-  y = x/(1+x)
+  y = x / (1 + x)
 )
 
 test_that("dup_axis() works", {
@@ -25,7 +25,7 @@ test_that("custom breaks work", {
     scale_x_continuous(
       name = "Unit A",
       sec.axis = sec_axis(
-        trans = y~.,
+        trans = y ~ .,
         breaks = custom_breaks
       )
     )

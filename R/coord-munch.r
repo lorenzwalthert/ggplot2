@@ -76,7 +76,7 @@ interp <- function(start, end, n) {
 dist_euclidean <- function(x, y) {
   n <- length(x)
 
-  sqrt((x[-n] - x[-1]) ^ 2 + (y[-n] - y[-1]) ^ 2)
+  sqrt((x[-n] - x[-1])^2 + (y[-n] - y[-1])^2)
 }
 
 # Compute central angle between two points.
@@ -88,7 +88,7 @@ dist_central_angle <- function(lon, lat) {
   lat <- lat * pi / 180
   lon <- lon * pi / 180
 
-  hav <- function(x) sin(x / 2) ^ 2
+  hav <- function(x) sin(x / 2)^2
   ahav <- function(x) 2 * asin(x)
 
   n <- length(lat)

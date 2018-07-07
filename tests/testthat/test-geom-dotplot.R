@@ -30,8 +30,8 @@ test_that("dodging works", {
   expect_true(all(abs(df$x - (xbase + xoffset)) < 1e-6))
 
   # Check that xmin and xmax are in the right place
-  expect_true(all(abs(df$xmax - df$x - dwidth/2) < 1e-6))
-  expect_true(all(abs(df$x - df$xmin - dwidth/2) < 1e-6))
+  expect_true(all(abs(df$xmax - df$x - dwidth / 2) < 1e-6))
+  expect_true(all(abs(df$x - df$xmin - dwidth / 2) < 1e-6))
 })
 
 test_that("binning works", {
@@ -55,7 +55,7 @@ test_that("binning works", {
 test_that("NA's result in warning from stat_bindot", {
   set.seed(122)
   dat <- data.frame(x = rnorm(20))
-  dat$x[c(2,10)] <- NA
+  dat$x[c(2, 10)] <- NA
 
   # Need to assign it to a var here so that it doesn't automatically print
   expect_warning(ggplot_build(ggplot(dat, aes(x)) + geom_dotplot(binwidth = .2)),
@@ -64,7 +64,7 @@ test_that("NA's result in warning from stat_bindot", {
 
 test_that("when binning on y-axis, limits depend on the panel", {
    p <- ggplot(mtcars, aes(factor(cyl), mpg)) +
-        geom_dotplot(binaxis='y')
+        geom_dotplot(binaxis = 'y')
 
    b1 <- ggplot_build(p + facet_wrap(~am))
    b2 <- ggplot_build(p + facet_wrap(~am, scales = "free_y"))
@@ -167,7 +167,7 @@ test_that("geom_dotplot draws correctly", {
       coord_flip()
   )
   expect_doppelganger("bin y, three x groups, fill and dodge",
-    ggplot(dat2, aes(x, y, fill = g)) + scale_y_continuous(breaks = seq(-4 ,4, .4)) +
+    ggplot(dat2, aes(x, y, fill = g)) + scale_y_continuous(breaks = seq(-4, 4, .4)) +
       geom_dotplot(binwidth = .2, position = "dodge", binaxis = "y", stackdir = "center")
   )
   expect_doppelganger("bin y, continous x-axis, grouping by x",

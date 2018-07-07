@@ -118,4 +118,3 @@ poly_dir <- function(x, y) {
 # ggplot(contours, aes(x, y)) +
 #   geom_path(aes(group = piece, colour = factor(dir)))
 # last_plot() + facet_wrap(~ level)
-

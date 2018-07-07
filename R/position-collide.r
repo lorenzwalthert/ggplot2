@@ -27,7 +27,7 @@ collide_setup <- function(data, width = NULL, name, strategy,
     width <- widths[1]
   }
 
-  list(data = data, width = width)  
+  list(data = data, width = width)
 }
 
 collide <- function(data, width = NULL, name, strategy,
@@ -53,7 +53,7 @@ collide <- function(data, width = NULL, name, strategy,
     # This is where the algorithm from [L. Wilkinson. Dot plots.
     # The American Statistician, 1999.] should be used
   }
-  
+
   if (!is.null(data$ymax)) {
     plyr::ddply(data, "xmin", strategy, ..., width = width)
   } else if (!is.null(data$y)) {

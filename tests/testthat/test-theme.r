@@ -265,7 +265,7 @@ test_that("titleGrob() and margins() work correctly", {
 # Visual tests ------------------------------------------------------------
 
 test_that("aspect ratio is honored", {
-  df <- data.frame(x = 1:8, y = 1:8, f = gl(2,4), expand.grid(f1 = 1:2, f2 = 1:2, rep = 1:2))
+  df <- data.frame(x = 1:8, y = 1:8, f = gl(2, 4), expand.grid(f1 = 1:2, f2 = 1:2, rep = 1:2))
   p <- ggplot(df, aes(x, y)) +
     geom_point() +
     theme_test() +
@@ -285,13 +285,13 @@ test_that("aspect ratio is honored", {
     p_a + facet_wrap(~f)
   )
   expect_doppelganger("height is 3 times width, 2 column facets",
-    p_a + facet_grid(.~f)
+    p_a + facet_grid(. ~ f)
   )
   expect_doppelganger("height is 3 times width, 2 row facets",
-    p_a + facet_grid(f~.)
+    p_a + facet_grid(f ~ .)
   )
   expect_doppelganger("height is 3 times width, 2x2 facets",
-    p_a + facet_grid(f1~f2)
+    p_a + facet_grid(f1 ~ f2)
   )
 
 })
@@ -300,7 +300,7 @@ test_that("themes don't change without acknowledgement", {
   df <- data.frame(x = 1:3, y = 1:3, z = c("a", "b", "a"), a = 1)
   plot <- ggplot(df, aes(x, y, colour = z)) +
     geom_point() +
-    facet_wrap(~ a)
+    facet_wrap(~a)
 
   expect_doppelganger("theme_bw", plot + theme_bw())
   expect_doppelganger("theme_classic", plot + theme_classic())
@@ -316,7 +316,7 @@ test_that("themes look decent at larger base sizes", {
   df <- data.frame(x = 1:3, y = 1:3, z = c("a", "b", "a"), a = 1)
   plot <- ggplot(df, aes(x, y, colour = z)) +
     geom_point() +
-    facet_wrap(~ a)
+    facet_wrap(~a)
 
   expect_doppelganger("theme_bw_large", plot + theme_bw(base_size = 33))
   expect_doppelganger("theme_classic_large", plot + theme_classic(base_size = 33))

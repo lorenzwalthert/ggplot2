@@ -72,7 +72,7 @@ scale_size_ordinal <- function(..., range = c(2, 6)) {
     "size",
     "size_d",
     function(n) {
-      area <- seq(range[1] ^ 2, range[2] ^ 2, length.out = n)
+      area <- seq(range[1]^2, range[2]^2, length.out = n)
       sqrt(area)
     },
     ...

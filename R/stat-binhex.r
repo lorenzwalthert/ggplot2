@@ -63,4 +63,3 @@ StatBinhex <- ggproto("StatBinhex", Stat,
     out
   }
 )
-

@@ -116,4 +116,3 @@ GeomPolygon <- ggproto("GeomPolygon", Geom,
 
   draw_key = draw_key_polygon
 )
-

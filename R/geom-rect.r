@@ -40,7 +40,7 @@ GeomRect <- ggproto("GeomRect", Geom,
       polys <- plyr::alply(data, 1, function(row) {
         poly <- rect_to_poly(row$xmin, row$xmax, row$ymin, row$ymax)
         aes <- as.data.frame(row[aesthetics],
-          stringsAsFactors = FALSE)[rep(1,5), ]
+          stringsAsFactors = FALSE)[rep(1, 5), ]
 
         GeomPolygon$draw_panel(cbind(poly, aes), panel_params, coord)
       })

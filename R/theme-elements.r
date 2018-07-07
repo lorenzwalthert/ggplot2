@@ -64,7 +64,7 @@ element_blank <- function() {
 element_rect <- function(fill = NULL, colour = NULL, size = NULL,
   linetype = NULL, color = NULL, inherit.blank = FALSE) {
 
-  if (!is.null(color))  colour <- color
+  if (!is.null(color)) colour <- color
   structure(
     list(fill = fill, colour = colour, size = size, linetype = linetype,
          inherit.blank = inherit.blank),
@@ -83,7 +83,7 @@ element_rect <- function(fill = NULL, colour = NULL, size = NULL,
 element_line <- function(colour = NULL, size = NULL, linetype = NULL,
   lineend = NULL, color = NULL, arrow = NULL, inherit.blank = FALSE) {
 
-  if (!is.null(color))  colour <- color
+  if (!is.null(color)) colour <- color
   if (is.null(arrow)) arrow <- FALSE
   structure(
     list(colour = colour, size = size, linetype = linetype, lineend = lineend,
@@ -111,7 +111,7 @@ element_text <- function(family = NULL, face = NULL, colour = NULL,
   size = NULL, hjust = NULL, vjust = NULL, angle = NULL, lineheight = NULL,
   color = NULL, margin = NULL, debug = NULL, inherit.blank = FALSE) {
 
-  if (!is.null(color))  colour <- color
+  if (!is.null(color)) colour <- color
   structure(
     list(family = family, face = face, colour = colour, size = size,
       hjust = hjust, vjust = vjust, angle = angle, lineheight = lineheight,
@@ -157,7 +157,7 @@ element_render <- function(theme, element, ..., name = NULL) {
 
 # Returns NULL if x is length 0
 len0_null <- function(x) {
-  if (length(x) == 0)  NULL
+  if (length(x) == 0) NULL
   else                 x
 }
 
@@ -174,7 +174,7 @@ element_grob <- function(element, ...) {
 }
 
 #' @export
-element_grob.element_blank <- function(element, ...)  zeroGrob()
+element_grob.element_blank <- function(element, ...) zeroGrob()
 
 #' @export
 element_grob.element_rect <- function(element, x = 0.5, y = 0.5,

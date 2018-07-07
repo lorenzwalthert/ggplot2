@@ -14,9 +14,9 @@ test_that("data is sorted prior to stacking", {
 
 test_that("negative and positive values are handled separately", {
   df <- data.frame(
-    x = c(1,1,1,2,2),
-    g = c(1,2,3,1,2),
-    y = c(1,-1,1,2,-3)
+    x = c(1, 1, 1, 2, 2),
+    g = c(1, 2, 3, 1, 2),
+    y = c(1, -1, 1, 2, -3)
   )
   p <- ggplot(df, aes(x, y, fill = factor(g))) + geom_col()
   dat <- layer_data(p)

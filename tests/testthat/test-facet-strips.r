@@ -135,6 +135,6 @@ test_that("strips can be removed", {
 
 test_that("y strip labels are rotated when strips are switched", {
   switched <- p + facet_grid(am ~ cyl, switch = "both")
-  
+
   expect_doppelganger("switched facet strips", switched)
 })
